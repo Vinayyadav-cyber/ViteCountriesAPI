@@ -1,7 +1,7 @@
 
 
 import { useEffect, useState } from 'react'
-import CountryCard from '../componets/CountryCard'
+import CountryCard from './CountryCard'
 import CountriesListShimmer from './CountriesListShimmer'
 export default function CountriesList({query}) {
 
@@ -10,7 +10,7 @@ export default function CountriesList({query}) {
      
     useEffect(()=>
       {
-      fetch('https://restcountries.com/v3.1/all')
+      fetch('https://restcountries.com/v3.1/all?fields=name,capital,flags,population,region')
    .then((res)=>res.json())
    .then((data)=>
    {
